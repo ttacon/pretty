@@ -86,7 +86,7 @@ func Println(a ...interface{}) (n int, errno error) {
 // Calling Sprintf(f, x, y) is equivalent to
 // fmt.Sprintf(f, Formatter(x), Formatter(y)).
 func Sprintf(format string, a ...interface{}) string {
-	return fmt.Sprintf(format, wrap(a, false)...)
+	return fmt.Sprintf(format, wrap(a, true)...)
 }
 
 func wrap(a []interface{}, force bool) []interface{} {
